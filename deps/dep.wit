@@ -1,5 +1,18 @@
 package abc:xyz;
 
+interface x {
+   record person {
+      name: string,
+      age: u32,
+   }
+}
+
 world dep {
-    export f: func() -> string;
+   use x.{person};
+
+   record when {
+      time: u64,
+   }
+
+   export f: func(who: list<person>, when: option<when>) -> string;
 }

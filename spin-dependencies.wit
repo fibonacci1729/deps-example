@@ -1,7 +1,27 @@
 package root:component;
 
 world root {
+  use abc:xyz/x.{person};
+
+  record when {
+    time: u64,
+  }
+  import f: func(who: list<person>, when: option<when>) -> string;
 }
 world impo-world0 {
-  import f: func() -> string;
+  import abc:xyz/x;
+  use abc:xyz/x.{person};
+
+  record when {
+    time: u64,
+  }
+  import f: func(who: list<person>, when: option<when>) -> string;
+}
+package abc:xyz {
+  interface x {
+    record person {
+      name: string,
+      age: u32,
+    }
+  }
 }
