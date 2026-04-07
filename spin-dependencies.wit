@@ -1,0 +1,7 @@
+package root:component;
+
+world root {
+}
+world impo-world0 {
+  import f: func() -> string;
+}

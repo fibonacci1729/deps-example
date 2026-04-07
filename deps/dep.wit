@@ -1,0 +1,5 @@
+package abc:xyz;
+
+world dep {
+    export f: func() -> string;
+}
